@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.6.0/angular-messages.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div ng-controller="mainController">
+    <!-- candy -->
+      <div class="candy-block">
+
+        <div class="candy-block_info">
+          <h1>Привeт, {{userName}}! Mы пришлем вам немного сладостей!</h1>
+          <h3>Для получения сладостей просто заполните короткую форму.</h3>
+          <div class="candy-block_info_button">
+            <button type="button" class="btn btn-outline-success" name="button">
+              <a href="#form" style="text-decoration:none; color:inherit">Перейти к форме</a>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    <!-- candy -->
+
+    <!-- which candy do you prefer -->
+      <ul class="candy-list">
+        <div class="candy-list_wrapper">
+          <p>Шоколадные конфеты:</p>
+          <li class="candy-list_item" ng-repeat="chocolate in chocolates">{{chocolate.candy}}</li>
+          <p>Фруктовые карамельки:</p>
+          <li class="candy-list_item" ng-repeat="fruit in fruits">{{fruit.candy}}</li>
+          <p>Жевательные резинки:</p>
+          <li class="candy-list_item" ng-repeat="gum in gums">{{gum.candy}}</li>
+        </div>
+      </ul>
+    <!-- which candy do you prefer -->
+
+    <!-- form -->
+      <div class="container">
+        <div>
+          <form name="myForm" id="form"  method="post">
+            <p>Выберите любимые сладостипо категориям<br>Определиться будет трудно, но выпостарайтесь!</p>
+            <select class="favorite" name="">
+              <option ng-repeat="chocolate in chocolates">{{chocolate.candy}}</option>
+            </select>
+            <select class="favorite" name="">
+              <option ng-repeat="fruit in fruits">{{fruit.candy}}</option>
+            </select>
+            <select class="favorite" name="">
+              <option ng-repeat="gum in gums">{{gum.candy}}</option>
+            </select>
+            <p>{{userName}}, для начала введите свой почтовый индекс:</p>
+            <input type="text" ng-model="index" name="nameField" minlength="5" required>
+            <div ng-messages="myForm.nameField.$error">
+              <div class="alert alert-warning alert-mess" ng-message="minlength">Почтовый индекс состоит из 5 символов</div>
+              <div class="alert alert-warning alert-mess" ng-if="index.length > 5">Что-то многовато для почтового индекса</div>
+              <div class="alert alert-danger alert-mess" ng-message="required">Поле обязательно для заполнения</div>
+              <div class="alert alert-success alert-mess" ng-if="index == 61000">О, так вы тоже из Харькова!</div>
+            </div>
+
+            <input type="text" ng-model="handle">
+            <h2>{{ upperCaseHandle()}}</h2>
+            <button class="btn btn-primary">Отправить!</button>
+          </form>
+        </div>
+      </div>
+    <!-- form -->
+  </div>
+
+</body>
+</html>

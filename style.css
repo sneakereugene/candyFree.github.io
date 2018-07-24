@@ -1,0 +1,67 @@
+body {
+  background: #e4d1d3; }
+  body input, body select {
+    border-radius: 4px;
+    border: 1px solid cyan;
+    background-color: rgba(255, 105, 180, 0.2);
+    padding: 3px;
+    margin: 10px; }
+
+.candy-block {
+  width: 100%;
+  padding: 20px;
+  background: url("candy-pattern.jpg") no-repeat;
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed; }
+  .candy-block .candy-block_info {
+    background-color: rgba(255, 105, 180, 0.6);
+    width: inherit;
+    padding: 20px;
+    color: #fff;
+    border-radius: 40px; }
+    .candy-block .candy-block_info h1, .candy-block .candy-block_info h3 {
+      text-shadow: 1px 1px 2px black, 0 0 1em red; }
+    .candy-block .candy-block_info .candy-block_info_button {
+      padding: 5px;
+      background: #fff000;
+      max-width: 190px;
+      border-radius: 5px;
+      margin: 0 auto; }
+
+.candy-list {
+  position: relative;
+  width: 30%;
+  list-style: none;
+  margin: 0 auto; }
+  .candy-list .candy-list_wrapper {
+    padding: 15px;
+    background-color: rgba(255, 105, 180, 0.4);
+    margin: 10px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 2px black, 0 0 1em #fff000; }
+    .candy-list .candy-list_wrapper p {
+      text-align: center;
+      color: cyan;
+      font-weight: bold; }
+    .candy-list .candy-list_wrapper .candy-list_item {
+      color: cyan;
+      font-size: 1em;
+      padding: 3px 80px 3px 80px;
+      text-align: center; }
+
+.alert-mess {
+  width: 30%;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.8em;
+  border-style: dotted; }
+
+#form {
+  background-color: rgba(255, 105, 180, 0.4);
+  border-radius: 15px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px; }
+
+/*# sourceMappingURL=style.css.map */
